@@ -9,6 +9,7 @@ public class CharDefaultInfo : ScriptableObject
     // ScriptableObject를 사용하여 각 캐릭터의 기본 능력치를 정의합니다.
     [Header("캐릭터명")]
     public string CharacterName;
+    public string CharacterId;
     [Header("체력/마나")]
     public int HP;
     public int MP;
