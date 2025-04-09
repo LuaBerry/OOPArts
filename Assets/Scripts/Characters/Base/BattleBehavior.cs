@@ -74,19 +74,16 @@ public abstract class BattleBehavior : MonoBehaviour
     }
 
     //데미지 주는 함수
-    public void DealDamage(GameObject[] target, DamageType type, int damage)
+    public void DealDamage(GameObject target, DamageType type, int damage)
     {
-        for (int i = 0; i < target.Length; i++)
+        BattleBehavior targetBehavior = target.GetComponent<BattleBehavior>();
+        if (targetBehavior != null)
         {
-            BattleBehavior targetBehavior = target[i].GetComponent<BattleBehavior>();
-            if (targetBehavior != null)
-            {
-                targetBehavior.TakeDamage(type, damage);
-            }
-            else
-            {
-                Debug.LogError("Target does not have BattleBehavior component.");
-            }
+            targetBehavior.TakeDamage(type, damage);
+        }
+        else
+        {
+            Debug.LogError("Target does not have BattleBehavior component.");
         }
     }
     
@@ -110,36 +107,30 @@ public abstract class BattleBehavior : MonoBehaviour
     }
 
     //체력 힐 함수
-    public void Heal(GameObject[] target, int healAmount)
+    public void Heal(GameObject target, int healAmount)
     {
-        for (int i = 0; i < target.Length; i++)
+        BattleBehavior targetBehavior = target.GetComponent<BattleBehavior>();
+        if (targetBehavior != null)
         {
-            BattleBehavior targetBehavior = target[i].GetComponent<BattleBehavior>();
-            if (targetBehavior != null)
-            {
-                targetBehavior.RegenerateHP(healAmount);
-            }
-            else
-            {
-                Debug.LogError("Target does not have BattleBehavior component.");
-            }
+            targetBehavior.RegenerateHP(healAmount);
+        }
+        else
+        {
+            Debug.LogError("Target does not have BattleBehavior component.");
         }
     }
 
     //마나 힐 함수
-    public void HealMana(GameObject[] target, int manaAmount)
+    public void HealMana(GameObject target, int manaAmount)
     {
-        for (int i = 0; i < target.Length; i++)
+        BattleBehavior targetBehavior = target.GetComponent<BattleBehavior>();
+        if (targetBehavior != null)
         {
-            BattleBehavior targetBehavior = target[i].GetComponent<BattleBehavior>();
-            if (targetBehavior != null)
-            {
-                targetBehavior.RegenerateMana(manaAmount);
-            }
-            else
-            {
-                Debug.LogError("Target does not have BattleBehavior component.");
-            }
+            targetBehavior.RegenerateMana(manaAmount);
+        }
+        else
+        {
+            Debug.LogError("Target does not have BattleBehavior component.");
         }
     }
 

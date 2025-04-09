@@ -29,29 +29,15 @@ public class TestCharacter : BattleBehavior
         //공격 시 행동을 정의해주세요
         Debug.Log("I am attacking!");
         //예시: 가장 체력이 낮은 적을 공격
-        //BattleBehavior target = GetLowestHp(enemies).GetComponent<BattleBehavior>();
-        //if (target != null)
-        //{
-        //    DealDamage(target.gameObject, DamageType.Physical, ad); // 물리 공격
-        //}
-        //else
-        //{
-        //    Debug.LogError("Target does not have BattleBehavior component.");
-        //}
+        //GameObject target = GetLowestHp(enemies);
+        //DealDamage(target, DamageType.Physical, ad); // 물리 공격
     }
     protected override void UserDefinedSkill(GameObject[] allies, GameObject[] enemies)
     {
         //스킬 사용 시 행동을 정의해주세요
         Debug.Log("I am using a skill!");
         //예시: 가장 체력이 낮은 아군을 힐
-        //BattleBehavior target = GetLowestHp(allies).GetComponent<BattleBehavior>();
-        //if (target != null)
-        //{
-        //    Heal(target.gameObject, mp); // 스킬 사용 시 체력 회복
-        //}
-        //else
-        //{
-        //    Debug.LogError("Target does not have BattleBehavior component.");
-        //}
+        //GameObject target = GetLowestHp(allies);
+        // Heal(target, mp); // 스킬 사용 시 체력 회복
     }
 }
