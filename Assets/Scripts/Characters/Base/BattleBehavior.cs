@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class BattleBehavior : MonoBehaviour
 {
-    //캐릭터 전투 행동을 정의하는 클래스
+    //캐릭터 전투 행동을 정의하는 클래스.
 
     // 캐릭터 설계자가 디자인해야 하는 부분입니다.
     protected abstract void UserDefinedAttack(GameObject[] allies, GameObject[] enemies);
